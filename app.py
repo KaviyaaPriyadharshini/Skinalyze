@@ -163,27 +163,6 @@ def show_upload_page():
         # Display predicted skin type
         st.markdown(f"<h3 style='color: white; font-size: 28px;'>Predicted Skin Type:</h3>", unsafe_allow_html=True)
         st.markdown(f"<h2 style='color: blue; font-weight: bold; text-align: center;'>{predicted_skin_type}</h2>", unsafe_allow_html=True)
-
-        # User input for irritation level
-        irritation_level = st.slider("Select Irritation Level", min_value=0, max_value=10, value=5)
-        
-        # User input for type of care
-        st.markdown(f"<h3 style='color: white; font-size: 28px;'>Select Type of Care:</h3>", unsafe_allow_html=True)
-        daily_care = st.checkbox("Daily Care")
-        general_care = st.checkbox("General Care")
-        pore_care = st.checkbox("Pore Care")
-
-        # Yes/No Questions for additional context
-        st.markdown(f"<h3 style='color: white; font-size: 28px;'>Additional Information:</h3>", unsafe_allow_html=True)
-        had_acne = st.radio("Have you had acne before?", ("Yes", "No"))
-        if had_acne == "Yes":
-            acne_start = st.text_input("When did it start?")
-            acne_duration = st.text_input("How long did it last?")
-        
-        other_conditions = st.radio("Do you have any other skin conditions or allergies?", ("Yes", "No"))
-        medications = st.radio("Are you currently taking any medications, including over-the-counter drugs or supplements?", ("Yes", "No"))
-        family_history = st.radio("Do you have a family history of acne or other skin conditions?", ("Yes", "No"))
-
     if st.button("Go Back"):
         go_to_page("home_page")
 
